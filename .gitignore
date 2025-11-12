@@ -10,7 +10,15 @@ compile_commands.json
 CTestTestfile.cmake
 _deps
 CMakeUserPresets.json
-
+bs2_default*
+*.bin
+*.dis
+*.elf
+*.elf.map
+*.hex
+*.uf2
+.ninja_deps
+.ninja_log
 # CLion
 #  JetBrains specific template is maintained in a separate JetBrains.gitignore that can
 #  be found at https://github.com/github/gitignore/blob/main/Global/JetBrains.gitignore
