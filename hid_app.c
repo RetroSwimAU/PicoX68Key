@@ -57,7 +57,7 @@ static uint8_t keyboard_addr = 0, keyboard_instance = 0;
 
 void set_leds(bool numLock, bool capsLock, bool scrollLock) {
 
-  uint8_t leds = numLock ?: 1 + capsLock ?: 2 + scrollLock ?: 4;
+  uint8_t leds = (numLock ? 1 : 0) + (capsLock ? 2 : 0) + (scrollLock ? 4 : 0);
 
   if(got_keyboard){
     tuh_hid_set_report(keyboard_addr, keyboard_instance, 0, HID_REPORT_TYPE_OUTPUT, &leds, sizeof(leds));
