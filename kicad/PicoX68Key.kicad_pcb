@@ -3994,7 +3994,7 @@
 			(uuid "09b7fc3f-ad72-4052-b1d9-bdf9004eed52")
 		)
 		(embedded_fonts no)
-		(model "/home/retro/repos/KiCad-RP-Pico/RP-Pico Libraries/Pico.wrl"
+		(model "./Library.pretty/Pico.wrl"
 			(offset
 				(xyz 0 0 0)
 			)
