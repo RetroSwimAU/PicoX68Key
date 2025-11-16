@@ -1,4 +1,4 @@
-15867528557185
+24685108288516
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -70574,6 +70574,13 @@ Yellow 5381 Series LED
 2
 2
 Library
+CUI_MD-70S
+
+
+0
+8
+8
+Library
 PinSocket_1x07_P2.54mm_Horizontal
 Through hole angled socket strip, 1x07, 2.54mm pitch, 8.51mm socket length, single row (from Kicad 4.0.7), script generated
 Through hole angled socket strip THT 1x07 2.54mm single row
@@ -70616,19 +70623,19 @@ to-92 sc-43 sc-43a sot54 PA33 transistor
 3
 3
 MCU_RaspberryPi_and_Boards
-Crystal_SMD_HC49-US
-SMD Crystal HC-49-SD http://cdn-reichelt.de/documents/datenblatt/B400/xxx-HC49-SMD.pdf, 11.4x4.7mm^2 package
-SMD SMT crystal
+CUI_MD-70S
+
+
 0
-2
-2
+8
+8
 MCU_RaspberryPi_and_Boards
-RP2040-QFN-56
-QFN, 56 Pin (http://www.cypress.com/file/416486/download#page=40), generated with kicad-footprint-generator ipc_dfn_qfn_generator.py
-QFN DFN_QFN
+PinSocket_1x07_P2.54mm_Horizontal
+Through hole angled socket strip, 1x07, 2.54mm pitch, 8.51mm socket length, single row (from Kicad 4.0.7), script generated
+Through hole angled socket strip THT 1x07 2.54mm single row
 0
-70
-57
+7
+7
 MCU_RaspberryPi_and_Boards
 RPi_Pico_SMD_TH
 Through hole straight pin header, 2x20, 2.54mm pitch, double rows
@@ -70636,6 +70643,34 @@ Through hole pin header THT 2x20 2.54mm double row
 0
 86
 43
+MCU_RaspberryPi_and_Boards
+R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
+Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC_7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
+resistor handsolder
+0
+2
+2
+MCU_RaspberryPi_and_Boards
+R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal
+Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
+Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm
+0
+2
+2
+MCU_RaspberryPi_and_Boards
+SOT-23
+SOT, 3 Pin (https://www.jedec.org/system/files/docs/to-236h.pdf variant AB), generated with kicad-footprint-generator ipc_gullwing_generator.py
+SOT TO_SOT_SMD
+0
+3
+3
+MCU_RaspberryPi_and_Boards
+TO-92_Inline
+TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
+to-92 sc-43 sc-43a sot54 PA33 transistor
+0
+3
+3
 Module
 A20_OLINUXINO_LIME2
 A20 Olinuxino LIME2, 1.2GHz, 512-1024MB RAM, Micro-SD, NAND or eMMC, 1000Mbit Ethernet

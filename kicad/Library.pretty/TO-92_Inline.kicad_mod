@@ -6,9 +6,9 @@
 	(descr "TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)")
 	(tags "to-92 sc-43 sc-43a sot54 PA33 transistor")
 	(property "Reference" "REF**"
-		(at 3.937 -2.413 0)
+		(at 4.25 -2.41 0)
 		(layer "F.SilkS")
-		(uuid "ac159c2e-3da4-4528-b413-14acbd2b7254")
+		(uuid "d109f678-5b45-4e6c-adb9-687d86eed4a9")
 		(effects
 			(font
 				(size 1 1)
@@ -20,7 +20,7 @@
 		(at 1.27 2.79 0)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "21b5a2c0-0e3a-47b6-9de7-624ecc6af41c")
+		(uuid "8580bdd1-757c-443d-b4fd-09b60bb0a144")
 		(effects
 			(font
 				(size 1 1)
@@ -28,11 +28,12 @@
 			)
 		)
 	)
-	(property "Datasheet" ""
+	(property "Datasheet" "https://www.vishay.com/docs/70226/70226.pdf"
 		(at 0 0 0)
+		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "173acb40-b250-480a-8936-f77520a5b68e")
+		(uuid "cddd164f-469f-4481-807f-109476997ddc")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -42,9 +43,10 @@
 	)
 	(property "Description" ""
 		(at 0 0 0)
+		(unlocked yes)
 		(layer "F.Fab")
 		(hide yes)
-		(uuid "2e11daaa-61cb-47f7-b41a-96f3826f48cf")
+		(uuid "bcd4eda3-625f-4a04-b251-cdf635c677aa")
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -52,7 +54,7 @@
 			)
 		)
 	)
-	(attr through_hole)
+	(attr through_hole allow_missing_courtyard)
 	(fp_line
 		(start -0.53 1.85)
 		(end 3.07 1.85)
@@ -61,7 +63,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "567fa646-bed0-4ca4-9082-7711c4bd1489")
+		(uuid "ec6ca002-93b4-4d08-a91e-a2803a96d1c8")
 	)
 	(fp_arc
 		(start -0.568478 1.838478)
@@ -72,7 +74,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "49d91b49-e594-4889-88af-1d79ba56eab4")
+		(uuid "1440aa81-b9f1-4b1b-ad5c-74a8272b50af")
 	)
 	(fp_arc
 		(start 1.27 -2.6)
@@ -83,7 +85,7 @@
 			(type solid)
 		)
 		(layer "F.SilkS")
-		(uuid "bb657e56-6e0a-4b4b-8012-0e62b802fbb6")
+		(uuid "4bb0a2aa-37e7-40b3-a01b-fa2b33a819f3")
 	)
 	(fp_line
 		(start -1.46 -2.73)
@@ -93,7 +95,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "f57b2e48-3f55-489a-abdf-c6cc1289a901")
+		(uuid "898f3b3f-f513-4d94-a0fa-90a692245afa")
 	)
 	(fp_line
 		(start -1.46 -2.73)
@@ -103,7 +105,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "614aa46f-7b08-4d02-a592-287fedf5b8bf")
+		(uuid "00a8a0fb-5dae-48f8-85f6-091ccfd256b5")
 	)
 	(fp_line
 		(start 4 2.01)
@@ -113,7 +115,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "1a0dce81-63fa-429a-8934-3aebcd6159c7")
+		(uuid "9a8e2b5d-e742-402c-923d-e41395da9340")
 	)
 	(fp_line
 		(start 4 2.01)
@@ -123,7 +125,7 @@
 			(type solid)
 		)
 		(layer "F.CrtYd")
-		(uuid "b2655a35-e718-40c2-b276-0db68bfe042d")
+		(uuid "337a9275-f566-4204-a83b-eda00619b386")
 	)
 	(fp_line
 		(start -0.5 1.75)
@@ -133,7 +135,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "52dcd37a-ebdf-4a38-9da5-14372e591c69")
+		(uuid "5b924d77-d97b-4a69-86d7-0546959c68b3")
 	)
 	(fp_arc
 		(start -0.483625 1.753625)
@@ -144,7 +146,7 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "72e5d9c9-3e53-48a7-b535-ac58e465b671")
+		(uuid "1c670554-14f0-43ca-9a6f-ec76386606c7")
 	)
 	(fp_arc
 		(start 1.27 -2.48)
@@ -155,12 +157,12 @@
 			(type solid)
 		)
 		(layer "F.Fab")
-		(uuid "da7c1468-14fd-4a65-aab6-18a34f61727b")
+		(uuid "b6253efd-12b4-4556-bbd9-c4d803e247b1")
 	)
 	(fp_text user "${REFERENCE}"
 		(at 1.27 0 0)
 		(layer "F.Fab")
-		(uuid "edd90adf-3562-4f88-97e2-f9e9c7a91f5f")
+		(uuid "76d35caf-df75-4e1b-9f5f-03fba8af5a15")
 		(effects
 			(font
 				(size 1 1)
@@ -174,7 +176,7 @@
 		(drill 0.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "57d51890-fc71-4943-bde1-43b6bdf208db")
+		(uuid "9a7a5116-5766-4a33-a192-545f9ec82a66")
 	)
 	(pad "2" thru_hole oval
 		(at 1.27 0)
@@ -182,7 +184,7 @@
 		(drill 0.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "b2ff7a9f-73f7-4bf4-91e7-aaa2408b00ab")
+		(uuid "fc7ef0ce-27bb-4a73-b8a2-87a3a6494e96")
 	)
 	(pad "3" thru_hole oval
 		(at 2.54 0)
@@ -190,10 +192,10 @@
 		(drill 0.75)
 		(layers "*.Cu" "*.Mask")
 		(remove_unused_layers no)
-		(uuid "a52962ef-c747-4e01-bf1e-085b723f27d4")
+		(uuid "f96d7f1d-494c-4cdb-b053-d707379e7ac5")
 	)
 	(embedded_fonts no)
-	(model "${KICAD6_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-92_Inline.wrl"
+	(model "${KICAD9_3DMODEL_DIR}/Package_TO_SOT_THT.3dshapes/TO-92_Inline.step"
 		(offset
 			(xyz 0 0 0)
 		)

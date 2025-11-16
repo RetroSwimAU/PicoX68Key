@@ -888,6 +888,258 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "Library:MD-70S"
+			(pin_names
+				(offset 1.016)
+			)
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(property "Reference" "J"
+				(at -5.08 13.462 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Value" "MD-70S"
+				(at -5.08 -15.24 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify left bottom)
+				)
+			)
+			(property "Footprint" "MD-70S:CUI_MD-70S"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "Datasheet" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "Description" ""
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(hide yes)
+				)
+			)
+			(property "PARTREV" "02/18/2022"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MAXIMUM_PACKAGE_HEIGHT" "12.8 mm"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(property "MANUFACTURER" "CUI"
+				(at 0 0 0)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+					(hide yes)
+				)
+			)
+			(symbol "MD-70S_0_0"
+				(rectangle
+					(start -5.08 -12.7)
+					(end 5.08 12.7)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin passive line
+					(at -10.16 10.16 0)
+					(length 5.08)
+					(name "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 7.62 0)
+					(length 5.08)
+					(name "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 5.08 0)
+					(length 5.08)
+					(name "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 2.54 0)
+					(length 5.08)
+					(name "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "4"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 0 0)
+					(length 5.08)
+					(name "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "5"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -2.54 0)
+					(length 5.08)
+					(name "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "6"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -5.08 0)
+					(length 5.08)
+					(name "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "7"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+				(pin passive line
+					(at -10.16 -10.16 0)
+					(length 5.08)
+					(name "SHIELD"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+					(number "S1"
+						(effects
+							(font
+								(size 1.016 1.016)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "Library:Pico"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1910,6 +2162,12 @@
 		(uuid "5fe3275c-9c0a-4c77-97b2-1de8b9f54486")
 	)
 	(junction
+		(at 173.99 135.89)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "67855947-4b02-4a24-af75-2d4010e94d47")
+	)
+	(junction
 		(at 62.23 93.98)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -1998,6 +2256,10 @@
 		(uuid "1f778a6b-e001-44c9-8f03-71727170f882")
 	)
 	(no_connect
+		(at 177.8 130.81)
+		(uuid "2041baa6-226f-4410-a14f-4906a63b0770")
+	)
+	(no_connect
 		(at 194.31 39.37)
 		(uuid "2168067c-7ea8-416e-982d-c9c8c52c0cd8")
 	)
@@ -2044,6 +2306,10 @@
 	(no_connect
 		(at 229.87 41.91)
 		(uuid "90960b07-397d-4e26-94b4-257533ed5a8c")
+	)
+	(no_connect
+		(at 177.8 133.35)
+		(uuid "93d2dcfe-0b2e-4eda-ab65-4417f1377288")
 	)
 	(no_connect
 		(at 209.55 82.55)
@@ -2111,6 +2377,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 125.73) (xy 177.8 125.73)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "0618a5cf-452b-4c2f-bc99-8f6ff946c3dc")
+	)
+	(wire
+		(pts
 			(xy 121.92 93.98) (xy 130.81 93.98)
 		)
 		(stroke
@@ -2168,6 +2444,16 @@
 			(type default)
 		)
 		(uuid "14b8870a-5f80-463f-aee7-f1e879b14d89")
+	)
+	(wire
+		(pts
+			(xy 168.91 120.65) (xy 177.8 120.65)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "14f4882c-5f56-43c8-bc0e-f08d7c9488fb")
 	)
 	(wire
 		(pts
@@ -2361,6 +2647,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 128.27) (xy 177.8 128.27)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3c3ddfb4-21e8-4598-97d7-c3b040de9268")
+	)
+	(wire
+		(pts
 			(xy 214.63 135.89) (xy 223.52 135.89)
 		)
 		(stroke
@@ -2478,6 +2774,16 @@
 			(type default)
 		)
 		(uuid "6a17d861-b694-4ba5-8086-b713211d5dbd")
+	)
+	(wire
+		(pts
+			(xy 173.99 135.89) (xy 177.8 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e3cf72a-e646-4bbb-b121-c3a4a6282e0c")
 	)
 	(wire
 		(pts
@@ -2641,6 +2947,16 @@
 	)
 	(wire
 		(pts
+			(xy 168.91 135.89) (xy 173.99 135.89)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "91acef7b-9af3-4ce1-859f-2f96fc2862f0")
+	)
+	(wire
+		(pts
 			(xy 41.91 49.53) (xy 45.72 49.53)
 		)
 		(stroke
@@ -2711,6 +3027,16 @@
 	)
 	(wire
 		(pts
+			(xy 173.99 135.89) (xy 173.99 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "a2d5788d-a0d6-45a1-bf0d-ab69c24490e1")
+	)
+	(wire
+		(pts
 			(xy 229.87 29.21) (xy 243.84 29.21)
 		)
 		(stroke
@@ -2738,6 +3064,16 @@
 			(type default)
 		)
 		(uuid "ad563647-a9d3-4bcd-9565-f495094332e8")
+	)
+	(wire
+		(pts
+			(xy 168.91 123.19) (xy 177.8 123.19)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b149c4ab-4ea4-4885-a86f-e21b01f5719a")
 	)
 	(wire
 		(pts
@@ -2788,6 +3124,16 @@
 			(type default)
 		)
 		(uuid "b82daf77-3592-472d-8167-7ed485dc6168")
+	)
+	(wire
+		(pts
+			(xy 173.99 140.97) (xy 177.8 140.97)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b88d24f3-3bca-4b6d-8b83-16b30522bc4f")
 	)
 	(wire
 		(pts
@@ -3045,6 +3391,28 @@
 			)
 		)
 	)
+	(global_label "VBUS"
+		(shape input)
+		(at 168.91 120.65 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "0969c180-8cfd-440b-be3b-e770edc79d70")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 161.5983 120.5706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "KB_TX_L"
 		(shape input)
 		(at 144.78 49.53 0)
@@ -3177,6 +3545,28 @@
 			)
 		)
 	)
+	(global_label "GND"
+		(shape passive)
+		(at 168.91 135.89 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "2e88ccad-3a3d-49bd-aa5a-56504b3c0bf2")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 162.6264 135.8106 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "VBUS"
 		(shape output)
 		(at 106.68 93.98 180)
@@ -3287,6 +3677,28 @@
 			)
 		)
 	)
+	(global_label "KB_RX_H"
+		(shape input)
+		(at 168.91 128.27 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "42b4ab10-3d9f-4d6e-9a91-633c26cfa855")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.2117 128.1906 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
 	(global_label "GND"
 		(shape passive)
 		(at 187.96 59.69 180)
@@ -3371,6 +3783,28 @@
 					(size 1.27 1.27)
 				)
 				(justify left)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "KB_TX_H"
+		(shape output)
+		(at 168.91 125.73 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "532efbe1-89c9-4e47-9b34-a0e0c768e553")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.514 125.6506 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
 				(hide yes)
 			)
 		)
@@ -3894,6 +4328,28 @@
 		(uuid "d099be66-78f8-4928-b101-99b89645a153")
 		(property "Intersheetrefs" "${INTERSHEET_REFS}"
 			(at 30.7883 31.6706 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify right)
+				(hide yes)
+			)
+		)
+	)
+	(global_label "MS_TX_H"
+		(shape input)
+		(at 168.91 123.19 180)
+		(fields_autoplaced yes)
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+			(justify right)
+		)
+		(uuid "d4c1c7f5-04d4-443b-9745-154627465e37")
+		(property "Intersheetrefs" "${INTERSHEET_REFS}"
+			(at 158.3931 123.1106 0)
 			(effects
 				(font
 					(size 1.27 1.27)
@@ -4655,7 +5111,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Horizontal"
+		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x07_P2.54mm_Vertical"
 			(at 228.6 128.27 0)
 			(effects
 				(font
@@ -5124,6 +5580,135 @@
 			(project ""
 				(path "/5c264861-3b5c-410f-b71b-223c876f16e9"
 					(reference "R2")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Library:MD-70S")
+		(at 187.96 130.81 0)
+		(unit 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "9d062432-7dd1-4e02-8780-7aa1a2505ea3")
+		(property "Reference" "J2"
+			(at 194.31 129.5399 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "MD-70S"
+			(at 194.31 132.0799 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "Library:CUI_MD-70S"
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "Datasheet" ""
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "Description" ""
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(hide yes)
+			)
+		)
+		(property "PARTREV" "02/18/2022"
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "12.8 mm"
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(property "MANUFACTURER" "CUI"
+			(at 187.96 130.81 0)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+				(hide yes)
+			)
+		)
+		(pin "S1"
+			(uuid "58e70771-8bda-436b-95ac-b57c7054d221")
+		)
+		(pin "7"
+			(uuid "d51f3b57-61f8-4ae4-99c6-16ecd5f660e9")
+		)
+		(pin "6"
+			(uuid "25582451-b785-415c-8708-34cbd9b11ccc")
+		)
+		(pin "5"
+			(uuid "fe5040db-154d-41ab-964d-278e52e9d239")
+		)
+		(pin "4"
+			(uuid "c79e8a42-2331-4c19-9f3e-bdd897dd0435")
+		)
+		(pin "3"
+			(uuid "17912f21-b40f-4eab-bed8-b88fdd316e0e")
+		)
+		(pin "2"
+			(uuid "5d20a820-853b-43cb-bbcf-4cfea2026db5")
+		)
+		(pin "1"
+			(uuid "4ad4b8c0-3a44-4159-932f-1685aff81d21")
+		)
+		(instances
+			(project ""
+				(path "/5c264861-3b5c-410f-b71b-223c876f16e9"
+					(reference "J2")
 					(unit 1)
 				)
 			)
