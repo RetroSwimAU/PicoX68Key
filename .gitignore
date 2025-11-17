@@ -20,5 +20,6 @@ bs2_default*
 .ninja_deps
 .ninja_log
 **/PicoX68Key-backups/*
+**/*.lck
 
 
