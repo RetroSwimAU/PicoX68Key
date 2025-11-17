@@ -1,4 +1,4 @@
-28212123026482
+12343623031821
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -70581,26 +70581,12 @@ CUI_MD-70S
 8
 8
 Library
-PinSocket_1x07_P2.54mm_Horizontal
-Through hole angled socket strip, 1x07, 2.54mm pitch, 8.51mm socket length, single row (from Kicad 4.0.7), script generated
-Through hole angled socket strip THT 1x07 2.54mm single row
-0
-7
-7
-Library
 PinSocket_1x07_P2.54mm_Vertical
 Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
 Through hole socket strip THT 1x07 2.54mm single row
 0
 7
 7
-Library
-RPi_Pico_SMD_TH
-Through hole straight pin header, 2x20, 2.54mm pitch, double rows
-Through hole pin header THT 2x20 2.54mm double row
-0
-86
-43
 Library
 R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
 Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
@@ -70616,6 +70602,13 @@ Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W leng
 2
 2
 Library
+RaspberryPi_Pico_Common
+Raspberry Pi Pico (wireless & original) versatile footprint for surface-mount or through-hole hand soldering, default socket model has height of 8.51mm, https://datasheets.raspberrypi.com/pico/pico-datasheet.pdf
+Raspberry Pi Pico module usb pcb antenna handsolder
+0
+80
+40
+Library
 SOT-23
 SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py
 SOT TO_SOT_SMD
@@ -70623,65 +70616,9 @@ SOT TO_SOT_SMD
 3
 3
 Library
-TO-92_Inline
-TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
-to-92 sc-43 sc-43a sot54 PA33 transistor
-0
-3
-3
-MCU_RaspberryPi_and_Boards
-CUI_MD-70S
-
-
-0
-8
-8
-MCU_RaspberryPi_and_Boards
-PinSocket_1x07_P2.54mm_Horizontal
-Through hole angled socket strip, 1x07, 2.54mm pitch, 8.51mm socket length, single row (from Kicad 4.0.7), script generated
-Through hole angled socket strip THT 1x07 2.54mm single row
-0
-7
-7
-MCU_RaspberryPi_and_Boards
-PinSocket_1x07_P2.54mm_Vertical
-Through hole straight socket strip, 1x07, 2.54mm pitch, single row (from Kicad 4.0.7), script generated
-Through hole socket strip THT 1x07 2.54mm single row
-0
-7
-7
-MCU_RaspberryPi_and_Boards
-RPi_Pico_SMD_TH
-Through hole straight pin header, 2x20, 2.54mm pitch, double rows
-Through hole pin header THT 2x20 2.54mm double row
-0
-86
-43
-MCU_RaspberryPi_and_Boards
-R_1206_3216Metric_Pad1.30x1.75mm_HandSolder
-Resistor SMD 1206 (3216 Metric), square (rectangular) end terminal, IPC-7351 nominal with elongated pad for handsoldering. (Body size source: IPC-SM-782 page 72, https://www.pcb-3d.com/wordpress/wp-content/uploads/ipc-sm-782a_amendment_1_and_2.pdf), generated with kicad-footprint-generator
-resistor handsolder
-0
-2
-2
-MCU_RaspberryPi_and_Boards
-R_Axial_DIN0309_L9.0mm_D3.2mm_P12.70mm_Horizontal
-Resistor, Axial_DIN0309 series, Axial, Horizontal, pin pitch=12.7mm, 0.5W = 1/2W, length*diameter=9*3.2mm^2, http://cdn-reichelt.de/documents/datenblatt/B400/1_4W%23YAG.pdf
-Resistor Axial_DIN0309 series Axial Horizontal pin pitch 12.7mm 0.5W = 1/2W length 9mm diameter 3.2mm
-0
-2
-2
-MCU_RaspberryPi_and_Boards
-SOT-23
-SOT, 3 Pin (JEDEC TO-236 Var AB https://www.jedec.org/document_search?search_api_views_fulltext=TO-236), generated with kicad-footprint-generator ipc_gullwing_generator.py
-SOT TO_SOT_SMD
-0
-3
-3
-MCU_RaspberryPi_and_Boards
-TO-92_Inline
-TO-92 leads in-line, narrow, oval pads, drill 0.75mm (see NXP sot054_po.pdf)
-to-92 sc-43 sc-43a sot54 PA33 transistor
+TO-92L_Inline_Wide
+TO-92L leads in-line (large body variant of TO-92), also known as TO-226, wide, drill 0.75mm (see https://www.diodes.com/assets/Package-Files/TO92L.pdf and http://www.ti.com/lit/an/snoa059/snoa059.pdf)
+TO-92L Inline Wide transistor
 0
 3
 3
