@@ -92,13 +92,16 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t instance, uint8_t const* desc_re
 
   tuh_hid_receive_report(dev_addr, instance);
 
-  blink();
 }
 
 // Invoked when device with hid interface is un-mounted
 void tuh_hid_umount_cb(uint8_t dev_addr, uint8_t instance)
 {
-  blink();
+  if (got_keyboard && (dev_addr == keyboard_addr) && (instance == keyboard_instance)) {
+    got_keyboard = false;
+    keyboard_addr = 0;
+    keyboard_instance = 0;
+  }
 }
 
 // Invoked when received report from device via interrupt endpoint

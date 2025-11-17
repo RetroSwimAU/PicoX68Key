@@ -50,11 +50,26 @@
 void press(uint8_t c);
 void keyDown(uint8_t c);
 void keyUp(uint8_t c);
- 
+void doRepeat();
+void stopRepeat();
+bool timerCallback(struct repeating_timer *t);
+
 // void typeCodeForDebug(uint8_t c);
 // void testMessage()
 
 extern void hid_app_task(void);
+
+uint8_t newKeyCode = 0;
+uint8_t downKeyCode = 0;
+uint32_t keyDownTime = 0;
+uint16_t repeatDelay = 500;   // ms before first repeat
+struct repeating_timer repeatTimer;
+
+// Key repeat timer code
+bool timerCallback(struct repeating_timer *t) {
+    doRepeat();
+    return true;
+}
 
 // Press a key
 void press(uint8_t c) {
@@ -81,7 +96,8 @@ void setSpecial(bool enabled) {
 }
 
 // Translate keystrokes from USB Boot Protocol "Usages" to X68000 scan codes
-uint8_t newKeyCode = 0;
+
+bool keyIsDown = false;
 
 void handleKey(uint8_t keycode, uint8_t state) {
     
@@ -99,11 +115,14 @@ void handleKey(uint8_t keycode, uint8_t state) {
     
     if(state == USBKEY_PRESSED) {
         keyDown(newKeyCode);
+        downKeyCode = newKeyCode;
+        keyDownTime = to_ms_since_boot(get_absolute_time());
+        keyIsDown = true;
     }else if(state == USBKEY_RELEASED) {
         keyUp(newKeyCode);
+        if(newKeyCode == downKeyCode) keyIsDown = false;
     }
 }
-
 
 // Accumulate deltas from USB HID Mouse reports.
 uint8_t mouseButtons = 0;
@@ -115,22 +134,11 @@ void handleMouse(uint8_t buttons, int8_t x, int8_t y) {
     mouseButtons = buttons;
 }
 
-// Blink Pico's LED a bit
-void blink() {
-    for(int i = 0; i <= 5; i++){
-        gpio_put(PICO_DEFAULT_LED_PIN, 1);
-        sleep_ms(20);
-        gpio_put(PICO_DEFAULT_LED_PIN, 0);
-        sleep_ms(20);
+void doRepeat() {
+    const uint32_t now = to_ms_since_boot(get_absolute_time());
+    if(keyIsDown && (now - keyDownTime) >= repeatDelay) {
+        keyDown(downKeyCode);
     }
-}
-
-// A lil tiny blink
-void littleBlink() {
-    gpio_put(PICO_DEFAULT_LED_PIN, 1);
-    sleep_ms(30);
-    gpio_put(PICO_DEFAULT_LED_PIN, 0);
-    sleep_ms(30);
 }
 
 int main()
@@ -154,6 +162,8 @@ int main()
 
     gpio_init(PICO_DEFAULT_LED_PIN);
     gpio_set_dir(PICO_DEFAULT_LED_PIN, GPIO_OUT);
+
+    add_repeating_timer_ms(500, timerCallback, NULL, &repeatTimer);
     
     while (true) {
         tuh_task();
@@ -165,6 +175,7 @@ int main()
             const uint8_t thisByte = uart_getc(KB_UART_ID);
 
             // 0x4x replicates the MSCTRL pin on the mouse port. Bit 0 falling means poll now.
+            // 0b01000001 then 0b01000000 = poll
             if(thisByte == 0x40 && lastByte == 0x41){
                 uint8_t mousePacket[3];
                 uint8_t xOvp = 0, xOvn = 0, yOvp = 0, yOvn = 0;
@@ -185,6 +196,7 @@ int main()
             }
 
             // 0x8x sets the keyboard LEDs.
+            // 0b 1 xxx xxxx
             if(thisByte & 0x80) {
                 // CAPS -> CAPS
                 // INS -> NUMLOCK
@@ -193,6 +205,20 @@ int main()
 
                 set_leds((thisByte >> 4) & 1, (thisByte >> 3) & 1, (thisByte >> 6) & 1);
 
+            }
+
+            if((thisByte & 0xf0) == 0x60)
+            {
+                const uint16_t rateByte = thisByte & 0x0f; 
+                const uint16_t rateMs = 30 + ((rateByte ^ 2) * 5);
+                repeatTimer.delay_us = (uint64_t)rateMs * 1000;
+            }
+
+            if((thisByte & 0xf0) == 0x70)
+            {
+                const uint16_t delayByte = thisByte & 0x0f; 
+                const uint16_t delayMs = 200 + (delayByte * 100);
+                repeatDelay = delayMs;
             }
 
             lastByte = thisByte;

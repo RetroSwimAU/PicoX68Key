@@ -8,8 +8,6 @@
 void handleKey(uint8_t keycode, uint8_t state);
 void handleMouse(uint8_t buttons, int8_t x, int8_t y);
 void setSpecial(bool enabled);
-void blink();
-void littleBlink();
 
 // This case used in hid_app.c to keep style consistent
 void set_leds(bool numLock, bool capsLock, bool scrollLock);
