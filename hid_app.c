@@ -35,13 +35,27 @@
 //--------------------------------------------------------------------+
 
 #define MAX_REPORT  8
-
 // Each HID instance can has multiple reports
-static struct
-{
-  uint8_t report_count;
-  tuh_hid_report_info_t report_info[MAX_REPORT];
-}hid_info[CFG_TUH_HID];
+static uint8_t _report_count[CFG_TUH_HID];
+static tuh_hid_report_info_t _report_info_arr[CFG_TUH_HID][MAX_REPORT];
+
+#define MAX_KEYBOARDS 10
+struct keyboard { uint8_t addr; uint8_t instance; };
+static struct keyboard keyboards[MAX_KEYBOARDS] =
+{ 
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff},
+  { 0xff, 0xff}
+ };
+
+static uint8_t num_keyboards;
 
 static void process_kbd_report(hid_keyboard_report_t const *report);
 static void process_mouse_report(hid_mouse_report_t const * report);
@@ -53,16 +67,31 @@ void hid_app_task(void)
 }
 
 static bool got_keyboard = false;
-static uint8_t keyboard_addr = 0, keyboard_instance = 0;
+static uint8_t sharp_to_hid_leds = 0;
+static uint8_t last_led_mask = 0;
 
-void set_leds(bool numLock, bool capsLock, bool scrollLock) {
+void set_leds(uint8_t led_mask) {
+  
+  if(led_mask == last_led_mask) return;
 
-  uint8_t leds = (numLock ? 1 : 0) + (capsLock ? 2 : 0) + (scrollLock ? 4 : 0);
+  // I came up with the below mapping arbitrarily.
+  sharp_to_hid_leds = 0; 
+  if(led_mask & 0x40) sharp_to_hid_leds |= KEYBOARD_LED_NUMLOCK;  // WIDE (全角) -> Num Lock
+//if(led_mask & 0x20) sharp_to_hid_leds |= 0;
+  if(led_mask & 0x10) sharp_to_hid_leds |= KEYBOARD_LED_SCROLLLOCK; // INS -> Scroll Lock
+  if(led_mask & 0x08) sharp_to_hid_leds |= KEYBOARD_LED_CAPSLOCK; // CAPS -> Caps Lock
+  if(led_mask & 0x04) sharp_to_hid_leds |= KEYBOARD_LED_COMPOSE; // CHORD ENTRY (コード入力) -> Compose ??
+//if(led_mask & 0x02) sharp_to_hid_leds |= 0;
+  if(led_mask & 0x01) sharp_to_hid_leds |= KEYBOARD_LED_KANA; // KANA (かな) -> Kana ??
+  // Don't have a keyboard with compose or kana LEDs to test, so YMMV.
 
-  if(got_keyboard){
-    tuh_hid_set_report(keyboard_addr, keyboard_instance, 0, HID_REPORT_TYPE_OUTPUT, &leds, sizeof(leds));
+  for(uint8_t i = 0; i < MAX_KEYBOARDS; i++){
+    if(keyboards[i].addr != 0xff && keyboards[i].instance != 0xff ){
+      tuh_hid_set_report(keyboards[i].addr, keyboards[i].instance, 0, HID_REPORT_TYPE_OUTPUT, &sharp_to_hid_leds, 1);
+    }
   }
 
+  last_led_mask = led_mask;
 }
 
 //--------------------------------------------------------------------+
@@ -79,15 +108,19 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t instance, uint8_t const* desc_re
   // Interface protocol (hid_interface_protocol_enum_t)
   uint8_t const itf_protocol = tuh_hid_interface_protocol(dev_addr, instance);
 
-  if ( itf_protocol == HID_ITF_PROTOCOL_NONE )
+  _report_count[instance] = tuh_hid_parse_report_descriptor(_report_info_arr[instance], MAX_REPORT, desc_report, desc_len);
+  
+  for (int i = 0; i < _report_count[instance]; i++) 
   {
-    hid_info[instance].report_count = tuh_hid_parse_report_descriptor(hid_info[instance].report_info, MAX_REPORT, desc_report, desc_len);
-  }
-
-  if (itf_protocol == HID_ITF_PROTOCOL_KEYBOARD) {
-    got_keyboard = true;
-    keyboard_addr = dev_addr;
-    keyboard_instance = instance;
+    if ((_report_info_arr[instance][i].usage_page == HID_USAGE_PAGE_DESKTOP) && 
+        (_report_info_arr[instance][i].usage == HID_USAGE_DESKTOP_KEYBOARD)) 
+    {
+      ledOn(true);
+      keyboards[num_keyboards].addr = dev_addr;
+      keyboards[num_keyboards].instance = instance;
+      num_keyboards++;
+      num_keyboards %= 10;
+    }
   }
 
   tuh_hid_receive_report(dev_addr, instance);
@@ -97,10 +130,11 @@ void tuh_hid_mount_cb(uint8_t dev_addr, uint8_t instance, uint8_t const* desc_re
 // Invoked when device with hid interface is un-mounted
 void tuh_hid_umount_cb(uint8_t dev_addr, uint8_t instance)
 {
-  if (got_keyboard && (dev_addr == keyboard_addr) && (instance == keyboard_instance)) {
-    got_keyboard = false;
-    keyboard_addr = 0;
-    keyboard_instance = 0;
+  for(uint8_t i = 0; i < MAX_KEYBOARDS; i++) {
+    if(keyboards[i].addr == dev_addr && keyboards[i].instance == instance) {
+      keyboards[i].addr = 0xff;
+      keyboards[i].instance = 0xff;
+    }
   }
 }
 
@@ -214,8 +248,8 @@ static void process_generic_report(uint8_t dev_addr, uint8_t instance, uint8_t c
   
   (void) dev_addr;
 
-  uint8_t const rpt_count = hid_info[instance].report_count;
-  tuh_hid_report_info_t* rpt_info_arr = hid_info[instance].report_info;
+  uint8_t const rpt_count = _report_count[instance];
+  tuh_hid_report_info_t* rpt_info_arr = _report_info_arr[instance];
   tuh_hid_report_info_t* rpt_info = NULL;
 
   if ( rpt_count == 1 && rpt_info_arr[0].report_id == 0)
