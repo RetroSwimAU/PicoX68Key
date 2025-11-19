@@ -6192,7 +6192,7 @@
 				(justify left)
 			)
 		)
-		(property "Value" "MD-70S"
+		(property "Value" "MINI-DIN-7"
 			(at 194.31 132.0799 0)
 			(effects
 				(font
@@ -6201,7 +6201,7 @@
 				(justify left)
 			)
 		)
-		(property "Footprint" "Library:CUI_MD-70S"
+		(property "Footprint" "Library:Mini_DIN_round_7_canned"
 			(at 187.96 130.81 0)
 			(effects
 				(font
